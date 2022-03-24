@@ -1,7 +1,8 @@
 name: run jest tests
 
 on:
-  push
+  push:
+    branches: [main, testing]
   pull_request:
     branches: [main]
 
