@@ -17,8 +17,7 @@ describe('Home', () => {
       name: 'Documentation → Find in-depth information about Next.js features and API.',
     });
 
-    userEvent.click(card);
-    expect(window.location.assign).toBeCalledWith('https://nextjs.org/docs');
+    expect(card.getAttribute('href')).toEqual('https://nextjs.org/docs');
   });
 
   test('Learn button works', () => {
@@ -26,8 +25,7 @@ describe('Home', () => {
       name: 'Learn → Learn about Next.js in an interactive course with quizzes!',
     });
 
-    userEvent.click(card);
-    expect(window.location.assign).toBeCalledWith('https://nextjs.org/learn');
+    expect(card.getAttribute('href')).toEqual('https://nextjs.org/learn');
   });
 
   test('Examples button works', () => {
@@ -35,8 +33,7 @@ describe('Home', () => {
       name: 'Examples → Discover and deploy boilerplate example Next.js projects.',
     });
 
-    userEvent.click(card);
-    expect(window.location.assign).toBeCalledWith('https://github.com/vercel/next.js/tree/canary/examples');
+    expect(card.getAttribute('href')).toEqual('https://github.com/vercel/next.js/tree/canary/examples');
   });
 
   test('Deploy button works', () => {
@@ -44,8 +41,7 @@ describe('Home', () => {
       name: 'Deploy → Instantly deploy your Next.js site to a public URL with Vercel.',
     });
 
-    userEvent.click(card);
-    expect(window.location.assign).toBeCalledWith(
+    expect(card.getAttribute('href')).toEqual(
       'https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
     );
   });
