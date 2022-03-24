@@ -19,7 +19,6 @@ describe('Home', () => {
     const card = screen.getByRole('link', {
       name: 'Learn → Learn about Next.js in an interactive course with quizzes!',
     });
-    expect('fea').toEqual('feafa');
     expect(card.getAttribute('href')).toEqual('https://nextjs.org/learn');
   });
 
