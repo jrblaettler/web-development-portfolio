@@ -5,11 +5,6 @@ import userEvent from '@testing-library/user-event';
 describe('Home', () => {
   beforeEach(() => {
     render(<Home />);
-
-    Object.defineProperty(window, 'location', {
-      writable: true,
-      value: { assign: jest.fn() },
-    });
   });
 
   test('Documentation button works', () => {
