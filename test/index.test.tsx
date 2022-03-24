@@ -35,6 +35,7 @@ describe('Home', () => {
       name: 'Examples → Discover and deploy boilerplate example Next.js projects.',
     });
 
+    userEvent.click(card);
     expect(window.location.assign).toBeCalledWith('https://github.com/vercel/next.js/tree/canary/examples');
   });
 
