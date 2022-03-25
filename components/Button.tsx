@@ -1,5 +1,3 @@
-import { MouseEvent } from 'react';
-
 interface ButtonProps {
   label?: string;
   onClick: Function;
