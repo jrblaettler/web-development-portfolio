@@ -1,4 +1,5 @@
-import { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, FormEvent, useState } from 'react';
+import Button from './Button';
 
 interface InputProps {
   id: string;
@@ -6,8 +7,11 @@ interface InputProps {
   name: string;
   type?: string;
   placeholder?: string;
+  button?: boolean;
+  buttonLabel?: string;
   onChange?(inputValue: string): void;
   onBlur?(inputValue: string): void;
+  onSubmit?(inputValue: string): void;
 }
 
 const Input = (props: InputProps) => {
@@ -15,10 +19,10 @@ const Input = (props: InputProps) => {
   const [value, setValue] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
     if (props.onChange && isTouched) {
       props.onChange(e.target.value);
     }
-    setValue(e.target.value);
   };
   const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
     if (props.onBlur) {
@@ -26,9 +30,15 @@ const Input = (props: InputProps) => {
     }
     setIsTouched(true);
   };
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (props.onSubmit) {
+      props.onSubmit(value);
+    }
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor={props.id}>{props.label}</label>
       <input
         id={props.id}
@@ -39,6 +49,7 @@ const Input = (props: InputProps) => {
         onBlur={handleBlur}
         value={value}
       />
+      {props.button ? <button type="submit">{props.buttonLabel || 'Submit'}</button> : null}
     </form>
   );
 };

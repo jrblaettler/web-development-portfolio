@@ -11,6 +11,7 @@ describe('Input', () => {
     expect(mockBlur).toBeCalledTimes(0);
     userEvent.click(document.body);
     expect(mockBlur).toBeCalledTimes(1);
+    expect(mockBlur).toBeCalledWith('test');
   });
 
   test('Input onChange handler works', () => {
@@ -22,5 +23,16 @@ describe('Input', () => {
     expect(mockChange).toBeCalledTimes(0);
     userEvent.type(screen.getByLabelText('test'), 'test');
     expect(mockChange).toBeCalledTimes(4);
+    expect(mockChange).toBeCalledWith('testtest');
+  });
+
+  test('Input onSubmit handler works', () => {
+    const mockSubmit = jest.fn();
+    render(<Input label="test" id="test" name="test" onSubmit={mockSubmit} button={true} />);
+
+    userEvent.type(screen.getByLabelText('test'), 'test');
+    userEvent.click(screen.getByText('Submit'));
+    expect(mockSubmit).toBeCalledTimes(1);
+    expect(mockSubmit).toBeCalledWith('test');
   });
 });
