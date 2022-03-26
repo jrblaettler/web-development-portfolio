@@ -7,8 +7,6 @@ interface InputProps {
   name: string;
   type?: string;
   placeholder?: string;
-  button?: boolean;
-  buttonLabel?: string;
   children?: ReactChild;
   onChange?(inputValue: string): void;
   onBlur?(inputValue: string): void;
