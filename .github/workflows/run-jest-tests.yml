@@ -5,8 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./web
       - uses: actions/checkout@v2
+      - uses: ./web
       - name: Install modules
         run: yarn
       - name: Run tests
