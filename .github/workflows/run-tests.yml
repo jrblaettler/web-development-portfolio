@@ -12,9 +12,11 @@ jobs:
       - name: Run web tests
         run: yarn test
         working-directory: web
-      - name: Install backend gems
-        run: bundle
-        working-directory: backend
+      - uses: ruby/setup-ruby@v1
+      - bundler-cache: true
+      # - name: Install backend gems
+      #   run: bundle
+      #   working-directory: backend
       - name: Run backend tests
-        run: bin/rails test
+        run: bundle exec bin/rails test
         working-directory: backend
