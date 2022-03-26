@@ -13,7 +13,8 @@ jobs:
         run: yarn test
         working-directory: web
       - uses: ruby/setup-ruby@v1
-      - bundler-cache: true
+        with:
+          bundler-cache: true
       # - name: Install backend gems
       #   run: bundle
       #   working-directory: backend
