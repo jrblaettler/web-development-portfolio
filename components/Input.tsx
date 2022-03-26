@@ -1,5 +1,4 @@
 import { ChangeEvent, FocusEvent, FormEvent, ReactChild, useState } from 'react';
-import Button from './Button';
 
 interface InputProps {
   id: string;
