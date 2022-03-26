@@ -1,7 +1,7 @@
-import Input from '../../components/Input';
+import Input from 'components/Input';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Button from '../../components/Button';
+import Button from 'components/Button';
 
 describe('Input', () => {
   test('Input blur handler works', () => {

@@ -1,4 +1,4 @@
-import Button from '../../components/Button';
+import Button from 'components/Button';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 

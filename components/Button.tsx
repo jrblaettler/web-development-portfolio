@@ -1,5 +1,3 @@
-import { ButtonHTMLAttributes } from 'react';
-
 interface ButtonProps {
   onClick: Function;
   children: string;
