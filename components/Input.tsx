@@ -41,7 +41,7 @@ const Input = (props: InputProps) => {
       <input
         id={props.id}
         name={props.name}
-        type={props.type || 'text'}
+        type={props.type}
         placeholder={props.placeholder || ''}
         onChange={handleChange}
         onBlur={handleBlur}
