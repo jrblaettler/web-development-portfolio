@@ -21,4 +21,8 @@ describe('Button', () => {
     userEvent.click(screen.getByText('test'));
     expect(mockOnClick).toBeCalledTimes(0);
   });
+
+  test('test', () => {
+    expect('test').toEqul('test');
+  });
 });
