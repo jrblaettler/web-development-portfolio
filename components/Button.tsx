@@ -1,12 +1,12 @@
 interface ButtonProps {
-  onClick: Function;
+  onClick: () => void;
   children: string;
   className?: string;
   disabled?: boolean;
 }
 const Button = (props: ButtonProps) => {
   return (
-    <button className={props.className} onClick={() => props.onClick()} disabled={props.disabled}>
+    <button className={props.className} onClick={props.onClick} disabled={props.disabled}>
       {props.children}
     </button>
   );
