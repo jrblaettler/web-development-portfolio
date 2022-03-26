@@ -1,9 +1,17 @@
+import { ButtonHTMLAttributes } from 'react';
+
 interface ButtonProps {
-  label?: string;
   onClick: Function;
+  children: string;
+  className?: string;
+  disabled?: boolean;
 }
 const Button = (props: ButtonProps) => {
-  return <button onClick={() => props.onClick()}>{props.label || 'Submit'}</button>;
+  return (
+    <button className={props.className} onClick={() => props.onClick()} disabled={props.disabled}>
+      {props.children}
+    </button>
+  );
 };
 
 export default Button;

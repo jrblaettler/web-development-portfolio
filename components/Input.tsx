@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, FormEvent, ReactChild, useState } from 'react';
 import Button from './Button';
 
 interface InputProps {
@@ -9,6 +9,7 @@ interface InputProps {
   placeholder?: string;
   button?: boolean;
   buttonLabel?: string;
+  children?: ReactChild;
   onChange?(inputValue: string): void;
   onBlur?(inputValue: string): void;
   onSubmit?(inputValue: string): void;
@@ -49,7 +50,7 @@ const Input = (props: InputProps) => {
         onBlur={handleBlur}
         value={value}
       />
-      {props.button ? <button type="submit">{props.buttonLabel || 'Submit'}</button> : null}
+      {props.children}
     </form>
   );
 };

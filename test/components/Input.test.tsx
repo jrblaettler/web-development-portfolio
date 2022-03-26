@@ -1,6 +1,7 @@
 import Input from '../../components/Input';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import Button from '../../components/Button';
 
 describe('Input', () => {
   test('Input blur handler works', () => {
@@ -28,7 +29,11 @@ describe('Input', () => {
 
   test('Input onSubmit handler works', () => {
     const mockSubmit = jest.fn();
-    render(<Input label="test" id="test" name="test" onSubmit={mockSubmit} button={true} />);
+    render(
+      <Input label="test" id="test" name="test" onSubmit={mockSubmit}>
+        <Button onClick={() => {}}>Submit</Button>
+      </Input>
+    );
 
     userEvent.type(screen.getByLabelText('test'), 'test');
     userEvent.click(screen.getByText('Submit'));
