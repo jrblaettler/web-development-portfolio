@@ -26,18 +26,4 @@ describe('Input', () => {
     expect(mockChange).toBeCalledTimes(4);
     expect(mockChange).toBeCalledWith('testtest');
   });
-
-  test('Input onSubmit handler works', () => {
-    const mockSubmit = jest.fn();
-    render(
-      <Input label="test" id="test" name="test" onSubmit={mockSubmit}>
-        <Button onClick={() => {}}>Submit</Button>
-      </Input>
-    );
-
-    userEvent.type(screen.getByLabelText('test'), 'test');
-    userEvent.click(screen.getByText('Submit'));
-    expect(mockSubmit).toBeCalledTimes(1);
-    expect(mockSubmit).toBeCalledWith('test');
-  });
 });

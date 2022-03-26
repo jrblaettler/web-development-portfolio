@@ -36,7 +36,7 @@ const Input = (props: InputProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <label htmlFor={props.id}>{props.label}</label>
       <input
         id={props.id}
@@ -47,8 +47,7 @@ const Input = (props: InputProps) => {
         onBlur={handleBlur}
         value={value}
       />
-      {props.children}
-    </form>
+    </>
   );
 };
 
