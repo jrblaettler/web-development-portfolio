@@ -5,8 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        working-directory: web
       - uses: actions/checkout@v2
       - name: Install modules
-        run: cd web && yarn
+        run: yarn
       - name: Run tests
-        run: cd web && yarn test
+        run: yarn test
