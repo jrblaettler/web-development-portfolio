@@ -19,6 +19,9 @@ jobs:
       # - name: Install backend gems
       #   run: bundle
       #   working-directory: backend
+      - name: migrate database
+        run: bundle exec rake db:migrate
+        working-directory: backend
       - name: Run backend tests
-        run: bundle exec bin/rails test
+        run: bin/rails test
         working-directory: backend
