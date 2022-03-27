@@ -23,4 +23,4 @@ jobs:
       #   working-directory: backend
       - name: Run backend tests
         run: bin/rails test
-      working-directory: backend
+        working-directory: backend
