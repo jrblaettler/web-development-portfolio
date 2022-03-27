@@ -21,6 +21,6 @@ jobs:
       # - name: migrate database
       #   run: bundle exec rake db:migrate
       #   working-directory: backend
-      # - name: Run backend tests
-      #   run: bin/rails test
-      # working-directory: backend
+      - name: Run backend tests
+        run: bin/rails test
+      working-directory: backend
