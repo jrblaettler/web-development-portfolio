@@ -15,11 +15,9 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.0
-          bundler-cache: true
+      - name: Install backend gems
+        run: bundle
         working-directory: backend
-      # - name: Install backend gems
-      #   run: bundle
-      #   working-directory: backend
       # - name: migrate database
       #   run: bundle exec rake db:migrate
       #   working-directory: backend
