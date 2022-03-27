@@ -1,0 +1,26 @@
+name: run tests
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install web modules
+        run: yarn
+        working-directory: web
+      - name: Run web tests
+        run: yarn test
+        working-directory: web
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.0
+      - name: Install backend gems
+        run: bundle
+        working-directory: backend
+      # - name: migrate database
+      #   run: bundle exec rake db:migrate
+      #   working-directory: backend
+      - name: Run backend tests
+        run: bin/rails test
+        working-directory: backend
