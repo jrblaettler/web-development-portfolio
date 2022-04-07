@@ -50,7 +50,7 @@ const FormInput = (props: FormInputProps) => {
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      {isTouched ? <p className="form-input-error">{errorMessage}</p> : null}
+      {isTouched ? <p className="text-red-500 text-xs italic m-0">{errorMessage}</p> : null}
     </div>
   );
 };
