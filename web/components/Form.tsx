@@ -32,15 +32,17 @@ const Form = (props: FormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormContext.Provider value={{ form, handleFormChange }}>{props.children}</FormContext.Provider>
-      <div className="form-button-container">
-        <p className="form-submit-error">{props.submitErrorMessage}</p>
-        <button className="form-button" type="submit">
-          {props.buttonText || 'Submit'}
-        </button>
-      </div>
-    </form>
+    <div className="w-full max-w-md">
+      <form className="bg-white shadow-md rounded px-8 py-5 mb-4" onSubmit={handleSubmit}>
+        <FormContext.Provider value={{ form, handleFormChange }}>{props.children}</FormContext.Provider>
+        <div className="form-button-container">
+          <p className="text-red-500 text-xs italic">{props.submitErrorMessage}</p>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            {props.buttonText || 'Submit'}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

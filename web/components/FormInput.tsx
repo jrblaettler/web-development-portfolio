@@ -37,12 +37,12 @@ const FormInput = (props: FormInputProps) => {
   };
 
   return (
-    <div key={props.id} className="form-input-container">
-      <label className="form-input-label" htmlFor={props.id}>
+    <div key={props.id} className="mb-5">
+      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={props.id}>
         {props.label}
       </label>
       <input
-        className="form-input"
+        className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-blue-500"
         type={props.type || 'text'}
         name={props.name}
         id={props.id}
