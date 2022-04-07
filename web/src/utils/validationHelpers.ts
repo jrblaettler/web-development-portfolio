@@ -5,9 +5,19 @@ export const validateEmail = (email: string) => {
 };
 
 export const validatePassword = (password: string) => {
-  if (password.length < 20) {
+  if (password.length <= 20) {
     return 'Please enter a password thats at least 20 characters';
-  } else if (password.length > 40) {
+  } else if (password.length >= 40) {
     return 'Please enter a password thats at most 40 characters';
+  }
+};
+
+export const validateName = (name: string) => {
+  if (!RegExp("^[a-z-']").test(name)) {
+    return 'Please enter only alphabetic characters';
+  } else if (!name.length) {
+    return 'Please enter your name';
+  } else if (name.length >= 50) {
+    return 'Please enter a name thats at most 50 characters';
   }
 };
